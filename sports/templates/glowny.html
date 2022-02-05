@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <div class="card" style="width: 50rem;" >
+    <div class="card-body">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/869c3b6d1a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'moj.css' %}">
+    <title> {% block tytul %} {% endblock %} </title>
+</head>
+<body>
+
+        {% block strona %} {% endblock %}
+
+</body>
+<style>
+    body {
+    background-color: #191970;
+    }
+
+
+</style>
+</html>

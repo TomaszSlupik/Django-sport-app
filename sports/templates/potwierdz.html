@@ -1,0 +1,16 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Usuwawanie {% endblock %}
+
+{% block strona %}
+
+    <h2> Czy napewno chcesz usunąć film?</h2>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-primary">Usun sportowca <i class="fas fa-trash-alt"></i></button>
+    </form>
+</body>
+</html>
+
+{% endblock %}

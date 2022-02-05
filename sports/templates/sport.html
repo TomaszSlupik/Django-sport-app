@@ -1,0 +1,39 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Lista sportowców {% endblock %}
+
+{% block strona %}
+    <a href="{% url 'login' %}">Login <i class="fas fa-sign-in-alt"></i></a>
+    <a href="{% url 'logout' %}">Logout<i class="fas fa-sign-in-alt"></i></a>
+
+    <h2><b>Baza sportowców: {{ sportowiec|length }}</b></h2>
+
+    <a href="{% url 'nowy_sportowiec' %}">Nowy sportowiec <i class="fas fa-external-link-alt"></i></a>
+
+
+
+    {% for nazwa in sportowiec %}
+
+        <div class="card" style="width: 40rem;">
+          <div class="card-body">
+
+            <h5 class="card-title">
+                <div class="row">
+                    <div class="col-3">
+                 <b>{{ nazwa }}</b>
+                </div>
+
+                </h5>
+            <h6 class="card-subtitle mb-2 text-muted"><p> <b>Data urodzenia:</b> {{nazwa.rok_urodzenia}}</p></h6>
+              <p><a href="{% url 'edytuj_sportowiec' nazwa.id %}">Edytuj</a>
+                <a href="{% url 'usun_sportowiec' nazwa.id %}">Usun</a></p>
+              <img src="/media/{{ nazwa.zdjęcie }}" width="200" height="240">
+            <p class="card-text"><div class="col-9">
+
+                <p><b><p style="text-align: justify"><u>Opis sportowca: </u></p></b>{{ nazwa.opis }} </p></p>
+
+                  </div>
+                </div>
+
+            </div>
+    {% endfor %}
+{% endblock %}
